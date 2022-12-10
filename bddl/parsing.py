@@ -6,6 +6,7 @@ import itertools
 import re
 import sys
 import pprint
+import time
 
 from bddl.config import SUPPORTED_BDDL_REQUIREMENTS as supported_requirements
 from bddl.config import get_domain_filename, get_definition_filename, READABLE_PREDICATE_NAMES
@@ -192,6 +193,7 @@ def parse_problem(behavior_activity, activity_definition, domain_name, predefine
                 package_predicates(group[1], goal_state, '', 'goals')
             else:
                 print('%s is not recognized in problem' % t)
+
         return problem_name, objects, initial_state, goal_state
     else:
         raise Exception(
